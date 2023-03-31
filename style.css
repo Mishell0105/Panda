@@ -1,0 +1,222 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+
+}
+
+body {
+    --border: #313233;
+    --fill: #5d5d5d;
+    height: 100vh;
+    background-color: aquamarine;
+
+
+}
+body {
+    font-family: 'Tangerine', serif;
+    font-size: 48px;
+}
+div {
+    width: 1000%;
+    border: black 3px solid;
+}
+.panda {
+    position: relative;
+    height: 360px;
+    width: 360px;
+    background-color: hotpink;
+    border-radius: 60px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    box-shadow: 0 0 22px rgba(0,0,0,0.3);
+    overflow: hidden;
+    transform: all cubic-bezier(0.175, 0.885, 0.32, 1.275) 0.3s;
+}
+.panda:hover {
+    transform: translate(-50%, -50%) scale(1.1);
+    box-shadow: 0 0 8px rgba(0,0,0,0.3);
+}
+.head {
+    position: absolute;
+    height: 156px;
+    width: 172px;
+    border: 5px solid var(--border);
+    background-color: #ffffff;
+    top: 92px;
+    left: 96px;
+    border-radius: 70% 70% 60% 60% / 80% 80% 60% 60%;
+    transform: rotate(10deg);
+    z-index: 1;
+
+}
+.head .eye {
+    position: inherit;
+    height: 50px;
+    width: 36px;
+    background: radial-gradient(circle, #ffff 10% transparent 10%) no-repeat;
+    background: radial-gradient(circle, var(--border) 22%, transparent 22%) no-repeat;
+    background-size: 18px 18px, 42px 42px;
+    background-position: 14px 10px, 0 2px;
+    top: 56px;
+    left: 24px;
+    background-color: var(--fill);
+    border-radius: 80% 20% 45% 50%/ 50%;
+}
+.head .eye.right {
+    top: 53px;
+    left: 103px;
+    transform: scaleX(-1);
+}
+.head.eye:before {
+    content: '';
+    position: absolute;
+    height: 30px;
+    width: 16px;
+    background-color: inherit;
+    left: 28px;
+    border-radius: 0 100% 100% 0 / 50%;
+ }
+ .head.eye:after {
+    content: '';
+    position: absolute;
+    height: 24px;
+    width: 20px;
+    background-color: #ffffff;
+    top: 22px;
+    left: 34px;
+    border-radius: 100% 0 0 0 / 100%;
+    z-index: 1;
+    transform: rotate(8deg);
+ }
+ .nose {
+    position: absolute;
+    height: 14px;
+    width: 17px;
+    top: 76px;
+    left: 73px;
+    background-color: var(--border);
+    border-radius: 100% / 70% 70% 150% 150%;
+    z-index: 10;
+ }
+ .nose:before, .nose:after {
+    content: '';
+    position: absolute;
+    height: 14px;
+    width: 14px;
+    border: 4px solid var(--border);
+    top: 8px;
+    left: -8px;
+    border-radius: 0 0 10px 3px;
+    border-top: 0;
+    border-left: 0;
+
+ }
+ .nose:before {
+    left: -8px;
+    transform: scaleX(-1);
+}
+
+ .nose:after {
+    right: -8px;
+    transform: scaleX(-1);
+ }
+
+ .ears, .ears:before {
+    position: absolute;
+    height: 60px;
+    width: 40px;
+    border: 4px solid var(--border);
+    background-color: var(--fill);
+    transform: rotate(40deg);
+    top: 80px;
+    left: 102px;
+    border-radius: 70% 0 0 70% / 50% 0 0 50%;
+    z-index: -1;
+}
+.ears:before {
+    content: '';
+    transform: rotate(110deg);
+    left: 110px;
+    top: -78px;
+    height: 46px;
+    width: 34px;
+}
+
+.hand {
+    position: absolute;
+    height: 100px;
+    width: 70px;
+    top: 174px;
+    left: 96px;
+    border: 4px solid var(--border);
+    background-color: var(--fill);
+    border-radius: 200% 0 0 100% / 200% 0 0 80%;    
+}
+.hand:before {
+    content: '';
+    position: absolute;
+    height: 32px;
+    width: 50px;
+    background: linear-gradient(90deg, transparent 20%, var
+    (--fill) 20%);
+    border: 4px solid var(--border);
+    background-color: var(--fill) ;
+    border-left-color: transparent;
+    top: 56px;
+    left: 22px;
+    z-index: 1;
+    border-radius: 15% 70% 25% 0;
+
+}
+.hand.right {
+    left: 192px;
+    transform: scaleX(-1);
+}
+.body {
+    position: absolute;
+    height: 160px;
+    width: 140px;
+    border: 4px solid var(--border);
+    background-color: #ffff;
+    top: 210px;
+    left: 110px;
+    z-index: -2;
+    border-radius: 64px;
+}
+.stem {
+    position: absolute;
+    height: 32px;
+    width: 300px;
+    background-color: #6df184;
+    border: 4px solid #218c74;
+    border-left: 0;
+    border-right: 0;
+    top: 248px;
+    left: 32px;
+    z-index: -1;
+}
+.stem::before, .stem::after {
+    content: '';
+    position: absolute; 
+    height: 32px;
+    width: 20px;
+    background: linear-gradient(65deg, #78ec8f 35%, #6df184 50%, #78ec8f  65%);  
+    border: 3px solid #218c74;
+    border-radius: 0 50%;
+    top: -34px;
+    left: 20px;
+    transform-origin: 100% 100% ;
+    transform: all cubic-bezier(0.175, 0.885, 0.32, 3) 0.3s;
+}
+.stem::after {
+    transform: rotate(25deg);
+    z-index: 0;
+}
+.panda:hover .stem::before, {
+    transform: rotate(-10deg);
+}
+.panda:hover.stem:after {
+    transform: rotate(15deg);
+}
